@@ -9,6 +9,7 @@ import { signIn, signUp } from '@/lib/actions/user.actions'
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { getLoggedInUser } from '@/lib/actions/user.actions'
+import PlaidLink from './PlaidLink'
 
 import { Button } from "@/components/ui/button"
 import {
@@ -61,8 +62,25 @@ const AuthForm = ({type} : {type:string}) => {
     try{
 
       // sign-up avec Appwrite et plaid token
+
       if(type==='sign-up'){
-        const newUser = await signUp(data)
+
+        const userData={
+          //Sans ! : TypeScript pense que firstName pourrait être undefined
+          //Avec ! : Tu dis à TypeScript "Ne t'inquiète pas, cette valeur est bien là"
+          email: data.email,
+          password: data.password,
+          firstName: data.firstName!,
+          lastName: data.lastName!,
+          address1: data.address1!,
+          state: data.state!,
+          postalCode: data.postalCode!,
+          dateOfBirth: data.dateOfBirth!,
+          ssn: data.ssn!,
+          city: data.city!,
+        }
+
+        const newUser = await signUp(userData)
 
         setUser(newUser)
       }
@@ -125,11 +143,11 @@ const AuthForm = ({type} : {type:string}) => {
           </div>
 
         </header>
-            {user ? (
+            {user ? ( 
                 <div className='flex flex-col gap-4'>
-                    {/* PlaidLink */}
+                    <PlaidLink user={user} variant="primary"/>
                 </div>
-            ):(
+            ):( 
                 <>
                     <Form {...form}>
                       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -171,7 +189,7 @@ const AuthForm = ({type} : {type:string}) => {
                             <div className='flex gap-4'>
 
                               <CustomInput 
-                                control={form.control} name='dateOfBirth' label="Date de Naissance" placeholder="Exemple: DD-MM-YYYY"
+                                control={form.control} name='dateOfBirth' label="Date de Naissance" placeholder="Exemple: YYYY-MM-DD"
                               />
 
                               <CustomInput 
@@ -220,7 +238,7 @@ const AuthForm = ({type} : {type:string}) => {
                       </p>
                     </footer>
                 </>
-            )}
+             )} 
     </section>
   )
 }
