@@ -1,54 +1,57 @@
-/*import React from 'react'
-import HeaderBox from '@/components/HeaderBox'
-import TotalBalanceBox from '@/components/TotalBalanceBox'
-import RightSidebar from '@/components/RightSidebar'
-import { getLoggedInUser } from '@/lib/actions/user.actions'
-import { getAccounts,getAccount } from '@/lib/actions/bank.actions'
+/*import HeaderBox from '@/components/HeaderBox'
+import RecentTransactions from '@/components/RecentTransactions';
+import RightSidebar from '@/components/RightSidebar';
+import TotalBalanceBox from '@/components/TotalBalanceBox';
+import { getAccount, getAccounts } from '@/lib/actions/bank.actions';
+import { getLoggedInUser } from '@/lib/actions/user.actions';
 
-const Home = async ({searchParams : {id,page}} : SearchParamProps) => {
+const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
 
-  const loggedIn = await getLoggedInUser()
-
-  const accounts = await getAccounts({
-    userId: loggedIn.$id
+  
+  const currentPage = Number(page as string) || 1;
+  const loggedIn = await getLoggedInUser();
+  const accounts = await getAccounts({ 
+    userId: loggedIn.$id 
   })
 
   if(!accounts) return;
-
-  const accountsData = accounts?.data
-
+  
+  const accountsData = accounts?.data;
   const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId;
 
-  const account = await getAccount({appwriteItemId})
+  const account = await getAccount({ appwriteItemId })
 
   return (
-    <section className='home'>
-       <div className='home-content'>
-        <header className='home-header'>
+    <section className="home">
+      <div className="home-content">
+        <header className="home-header">
           <HeaderBox 
             type="greeting"
-            title="Bienvenue"
-            user={loggedIn?.name || 'Guest'}
-            subtext="Accédez à votre compte et gérez vos transactions efficacement."
-          
+            title="Welcome"
+            user={loggedIn?.firstName || 'Guest'}
+            subtext="Access and manage your account and transactions efficiently."
           />
 
-          <TotalBalanceBox
-             accounts={[accountsData]}
-             totalBanks={accounts?.totalBanks}
-             totalCurrentBalance={ accounts?.totalCurrentBalance }
-          
+          <TotalBalanceBox 
+            accounts={accountsData}
+            totalBanks={accounts?.totalBanks}
+            totalCurrentBalance={accounts?.totalCurrentBalance}
           />
         </header>
 
-        RECENT TRANSACTION
-       </div>
+        <RecentTransactions 
+          accounts={accountsData}
+          transactions={account?.transactions}
+          appwriteItemId={appwriteItemId}
+          page={currentPage}
+        />
+      </div>
 
-       <RightSidebar 
+      <RightSidebar 
         user={loggedIn}
-        transactions={[account?.transactions]}
-        banks={accountsData?.slice(0,2)}
-       />
+        transactions={account?.transactions}
+        banks={accountsData?.slice(0, 2)}
+      />
     </section>
   )
 }
@@ -61,8 +64,11 @@ import TotalBalanceBox from '@/components/TotalBalanceBox'
 import RightSidebar from '@/components/RightSidebar'
 import { getLoggedInUser } from '@/lib/actions/user.actions'
 import { getAccounts,getAccount } from '@/lib/actions/bank.actions'
+import RecentTransactions from '@/components/RecentTransactions'
 
 const Home = async ({searchParams : {id,page}} : SearchParamProps) => {
+
+  const currentPage = Number(page as string) || 1;
 
   const loggedIn = await getLoggedInUser()
 
@@ -86,7 +92,7 @@ const Home = async ({searchParams : {id,page}} : SearchParamProps) => {
           <HeaderBox 
             type="greeting"
             title="Bienvenue"
-            user={loggedIn?.name || 'Guest'}
+            user={loggedIn?.firstName || 'Guest'}
             subtext="Accédez à votre compte et gérez vos transactions efficacement."
           
           />
@@ -99,7 +105,12 @@ const Home = async ({searchParams : {id,page}} : SearchParamProps) => {
           />
         </header>
 
-        RECENT TRANSACTION
+        <RecentTransactions 
+          accounts={accountsData}
+          transactions={account?.transactions}
+          appwriteItemId={appwriteItemId}
+          page={currentPage}
+        />
        </div>
 
        <RightSidebar 
@@ -111,4 +122,4 @@ const Home = async ({searchParams : {id,page}} : SearchParamProps) => {
   )
 }
 
-export default Home
+export default Home 

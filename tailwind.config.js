@@ -19,7 +19,7 @@ module.exports = {
     },
     extend: {
       fontSize: {
-        '16': '16px', // Corrigé pour v3
+        '16': '16px',
       },
       colors: {
         fill: {
@@ -69,6 +69,36 @@ module.exports = {
           600: "#475467",
           700: "#344054",
           900: "#101828",
+        },
+        // ✅ AJOUT: Couleurs pour les catégories
+        green: {
+          25: "#F6FEF9",
+          50: "#ECFDF3",
+          100: "#D1FADF",
+          600: "#16A34A",
+          700: "#15803D",
+          900: "#14532D",
+        },
+        orange: {
+          25: "#FFFAF5",
+          100: "#FED7AA",
+          600: "#EA580C",
+          700: "#C2410C",
+          900: "#7C2D12",
+        },
+        purple: {
+          25: "#FAF5FF",
+          100: "#E9D5FF",
+          600: "#9333EA",
+          700: "#7E22CE",
+          900: "#581C87",
+        },
+        red: {
+          25: "#FEF3F2",
+          100: "#FEE2E2",
+          600: "#DC2626",
+          700: "#B91C1C",
+          900: "#7F1D1D",
         },
       },
       backgroundImage: {

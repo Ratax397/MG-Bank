@@ -12,8 +12,8 @@ import {
 import { plaidClient } from "../plaid";
 import { parseStringify } from "../utils";
 
-//import { getTransactionsByBankId } from "./transaction.actions";
 import { getBanks, getBank } from "./user.actions";
+import { getTransactionsByBankId } from "./transactions.actions";
 
 // Get multiple bank accounts
 export const getAccounts = async ({ userId }: getAccountsProps) => {
@@ -80,17 +80,18 @@ export const getAccount = async ({ appwriteItemId }: getAccountProps) => {
       bankId: bank.$id,
     });
 
-    const transferTransactions = transferTransactionsData.documents.map(
+    // ✅ SOLUTION: Vérifier que transferTransactionsData existe et a des documents
+    const transferTransactions = transferTransactionsData?.documents?.map(
       (transferData: Transaction) => ({
         id: transferData.$id,
         name: transferData.name!,
         amount: transferData.amount!,
         date: transferData.$createdAt,
         paymentChannel: transferData.channel,
-        category: transferData.category,
+        category: transferData.category || "Transfert", // ✅ Catégorie par défaut
         type: transferData.senderBankId === bank.$id ? "debit" : "credit",
       })
-    );
+    ) || []; // Retourner un tableau vide si pas de données
 
     // get institution info from plaid
     const institution = await getInstitution({
@@ -170,7 +171,10 @@ export const getTransactions = async ({
         accountId: transaction.account_id,
         amount: transaction.amount,
         pending: transaction.pending,
-        category: transaction.category ? transaction.category[0] : "",
+        // ✅ Utilisation de personal_finance_category (nouveau standard Plaid)
+        category: transaction.personal_finance_category?.primary || 
+                  transaction.personal_finance_category?.detailed || 
+                  "Autres",
         date: transaction.date,
         image: transaction.logo_url,
       }));
