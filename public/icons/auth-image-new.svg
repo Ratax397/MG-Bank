@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" fill="none">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg_gradient" x1="0" y1="0" x2="500" y2="500">
+      <stop offset="0%" stop-color="#E8F5E9"/>
+      <stop offset="50%" stop-color="#C8E6C9"/>
+      <stop offset="100%" stop-color="#A5D6A7"/>
+    </linearGradient>
+    
+    <linearGradient id="ground_gradient" x1="0" y1="300" x2="0" y2="500">
+      <stop offset="0%" stop-color="#8BC34A"/>
+      <stop offset="100%" stop-color="#689F38"/>
+    </linearGradient>
+    
+    <linearGradient id="ravinala_gradient" x1="250" y1="100" x2="250" y2="350">
+      <stop offset="0%" stop-color="#66BB6A"/>
+      <stop offset="50%" stop-color="#4CAF50"/>
+      <stop offset="100%" stop-color="#388E3C"/>
+    </linearGradient>
+    
+    <linearGradient id="trunk_gradient" x1="250" y1="280" x2="250" y2="380">
+      <stop offset="0%" stop-color="#8D6E63"/>
+      <stop offset="100%" stop-color="#5D4037"/>
+    </linearGradient>
+    
+    <linearGradient id="building_gradient" x1="0" y1="200" x2="0" y2="350">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F5F5F5"/>
+    </linearGradient>
+    
+    <linearGradient id="card_gradient" x1="300" y1="150" x2="400" y2="200">
+      <stop offset="0%" stop-color="#22C55E"/>
+      <stop offset="50%" stop-color="#16A34A"/>
+      <stop offset="100%" stop-color="#15803D"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="500" height="500" fill="url(#bg_gradient)"/>
+  
+  <!-- Ground/Hills -->
+  <ellipse cx="250" cy="450" rx="300" ry="100" fill="url(#ground_gradient)"/>
+  <ellipse cx="100" cy="400" rx="120" ry="60" fill="#7CB342" opacity="0.6"/>
+  <ellipse cx="400" cy="420" rx="100" ry="50" fill="#7CB342" opacity="0.5"/>
+  
+  <!-- Large Ravinala Tree (center-left) -->
+  <g id="main_ravinala" transform="translate(150, 250)">
+    <!-- Trunk -->
+    <rect x="-5" y="30" width="10" height="80" rx="2" fill="url(#trunk_gradient)"/>
+    
+    <!-- Crown/Bulb -->
+    <ellipse cx="0" cy="30" rx="12" ry="8" fill="#9CCC65"/>
+    
+    <!-- Fan leaves -->
+    <path d="M0,30 L-60,-50" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L-40,-55" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L-20,-58" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L0,-60" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L20,-58" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L40,-55" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L60,-50" stroke="#689F38" stroke-width="2" fill="none"/>
+    
+    <!-- Leaf shapes -->
+    <ellipse cx="-60" cy="-50" rx="8" ry="20" transform="rotate(-30 -60 -50)" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="-40" cy="-55" rx="7" ry="20" transform="rotate(-20 -40 -55)" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="-20" cy="-58" rx="7" ry="20" transform="rotate(-10 -20 -58)" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="0" cy="-60" rx="8" ry="22" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="20" cy="-58" rx="7" ry="20" transform="rotate(10 20 -58)" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="40" cy="-55" rx="7" ry="20" transform="rotate(20 40 -55)" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="60" cy="-50" rx="8" ry="20" transform="rotate(30 60 -50)" fill="url(#ravinala_gradient)"/>
+  </g>
+  
+  <!-- Small Ravinala (right) -->
+  <g id="small_ravinala" transform="translate(380, 300) scale(0.6)">
+    <!-- Trunk -->
+    <rect x="-5" y="30" width="10" height="80" rx="2" fill="url(#trunk_gradient)"/>
+    
+    <!-- Crown/Bulb -->
+    <ellipse cx="0" cy="30" rx="12" ry="8" fill="#9CCC65"/>
+    
+    <!-- Fan leaves -->
+    <path d="M0,30 L-60,-50" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L-40,-55" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L-20,-58" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L0,-60" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L20,-58" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L40,-55" stroke="#689F38" stroke-width="2" fill="none"/>
+    <path d="M0,30 L60,-50" stroke="#689F38" stroke-width="2" fill="none"/>
+    
+    <!-- Leaf shapes -->
+    <ellipse cx="-60" cy="-50" rx="8" ry="20" transform="rotate(-30 -60 -50)" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="-40" cy="-55" rx="7" ry="20" transform="rotate(-20 -40 -55)" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="-20" cy="-58" rx="7" ry="20" transform="rotate(-10 -20 -58)" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="0" cy="-60" rx="8" ry="22" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="20" cy="-58" rx="7" ry="20" transform="rotate(10 20 -58)" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="40" cy="-55" rx="7" ry="20" transform="rotate(20 40 -55)" fill="url(#ravinala_gradient)"/>
+    <ellipse cx="60" cy="-50" rx="8" ry="20" transform="rotate(30 60 -50)" fill="url(#ravinala_gradient)"/>
+  </g>
+  
+  <!-- Modern Bank Building -->
+  <g id="bank_building">
+    <rect x="220" y="250" width="120" height="100" rx="5" fill="url(#building_gradient)"/>
+    <rect x="220" y="240" width="120" height="15" rx="5" fill="#16A34A"/>
+    
+    <!-- Windows -->
+    <rect x="230" y="265" width="20" height="20" rx="2" fill="#81C784" opacity="0.6"/>
+    <rect x="260" y="265" width="20" height="20" rx="2" fill="#81C784" opacity="0.6"/>
+    <rect x="290" y="265" width="20" height="20" rx="2" fill="#81C784" opacity="0.6"/>
+    <rect x="320" y="265" width="20" height="20" rx="2" fill="#81C784" opacity="0.6"/>
+    
+    <rect x="230" y="295" width="20" height="20" rx="2" fill="#81C784" opacity="0.5"/>
+    <rect x="260" y="295" width="20" height="20" rx="2" fill="#81C784" opacity="0.5"/>
+    <rect x="290" y="295" width="20" height="20" rx="2" fill="#81C784" opacity="0.5"/>
+    <rect x="320" y="295" width="20" height="20" rx="2" fill="#81C784" opacity="0.5"/>
+    
+    <rect x="230" y="325" width="20" height="20" rx="2" fill="#81C784" opacity="0.4"/>
+    <rect x="320" y="325" width="20" height="20" rx="2" fill="#81C784" opacity="0.4"/>
+    
+    <!-- Door -->
+    <rect x="265" y="320" width="30" height="30" rx="3" fill="#388E3C"/>
+    
+    <!-- Bank Sign -->
+    <text x="280" y="250" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">MG-BANK</text>
+  </g>
+  
+  <!-- Floating Credit Card -->
+  <g id="credit_card" transform="translate(320, 150) rotate(15 50 30)">
+    <rect x="0" y="0" width="100" height="60" rx="5" fill="url(#card_gradient)"/>
+    <rect x="10" y="15" width="30" height="20" rx="2" fill="#FFD700"/>
+    <rect x="10" y="42" width="40" height="3" fill="#FFFFFF" opacity="0.6"/>
+    <rect x="55" y="42" width="35" height="3" fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="75" cy="25" r="8" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.8"/>
+    <circle cx="85" cy="25" r="8" fill="none" stroke="#FFFFFF" stroke-width="1.5" opacity="0.8"/>
+  </g>
+  
+  <!-- Floating Money Symbol -->
+  <g id="money_symbols">
+    <text x="100" y="150" font-family="Arial, sans-serif" font-size="24" fill="#16A34A" opacity="0.3" transform="rotate(-15 100 150)">$</text>
+    <text x="420" y="180" font-family="Arial, sans-serif" font-size="20" fill="#16A34A" opacity="0.3" transform="rotate(10 420 180)">€</text>
+    <text x="80" y="280" font-family="Arial, sans-serif" font-size="18" fill="#16A34A" opacity="0.25" transform="rotate(25 80 280)">¥</text>
+    <text x="430" y="320" font-family="Arial, sans-serif" font-size="22" fill="#16A34A" opacity="0.3" transform="rotate(-20 430 320)">£</text>
+  </g>
+  
+  <!-- Decorative Circles -->
+  <circle cx="50" cy="100" r="20" fill="#4CAF50" opacity="0.1"/>
+  <circle cx="450" cy="120" r="25" fill="#66BB6A" opacity="0.1"/>
+  <circle cx="80" cy="200" r="15" fill="#81C784" opacity="0.15"/>
+  <circle cx="420" y="250" r="18" fill="#4CAF50" opacity="0.12"/>
+  
+  <!-- Madagascar flag colors accent (subtle) -->
+  <rect x="240" y="220" width="80" height="2" fill="#D72638" opacity="0.5"/>
+  <rect x="240" y="222" width="80" height="2" fill="#FFFFFF" opacity="0.7"/>
+  <rect x="240" y="224" width="80" height="2" fill="#007A3D" opacity="0.5"/>
+  
+  <!-- Floating leaves decoration -->
+  <g id="floating_leaves">
+    <ellipse cx="120" cy="120" rx="4" ry="8" fill="#66BB6A" opacity="0.4" transform="rotate(45 120 120)"/>
+    <ellipse cx="380" cy="100" rx="3" ry="7" fill="#4CAF50" opacity="0.3" transform="rotate(-30 380 100)"/>
+    <ellipse cx="60" cy="350" rx="4" ry="9" fill="#81C784" opacity="0.35" transform="rotate(60 60 350)"/>
+    <ellipse cx="440" cy="380" rx="3" ry="6" fill="#66BB6A" opacity="0.3" transform="rotate(-45 440 380)"/>
+  </g>
+</svg>

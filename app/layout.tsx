@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mada-Bank",
-  description: "Mada Bank est une plateforme moderne de gestion de comptes bancaires.",
+  title: "MG-Bank",
+  description: "MG-Bank est une plateforme moderne de gestion de comptes bancaires à Madagascar.",
   icons: {
     icon: '/icons/logo.svg'
   }

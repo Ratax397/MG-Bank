@@ -97,15 +97,15 @@ export const topCategoryStyles = {
 
 export const topCategoryStyles = {
   "Food and Drink": {
-    bg: "bg-blue-25",
-    circleBg: "bg-blue-100",
+    bg: "bg-green-25",
+    circleBg: "bg-green-100",
     text: {
-      main: "text-blue-900",
-      count: "text-blue-700",
+      main: "text-green-900",
+      count: "text-green-700",
     },
     progress: {
-      bg: "bg-blue-100",
-      indicator: "bg-blue-700",
+      bg: "bg-green-100",
+      indicator: "bg-green-700",
     },
     icon: "/icons/monitor.svg",
   },
@@ -270,10 +270,10 @@ export const transactionCategoryStyles = {
     chipBackgroundColor: "bg-red-25",
   },
   Travel: {
-    borderColor: "border-blue-600",
-    backgroundColor: "bg-blue-600",
-    textColor: "text-blue-700",
-    chipBackgroundColor: "bg-blue-25",
+    borderColor: "border-green-600",
+    backgroundColor: "bg-green-600",
+    textColor: "text-green-700",
+    chipBackgroundColor: "bg-green-25",
   },
   "General Merchandise": {
     borderColor: "border-purple-600",

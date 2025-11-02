@@ -15,6 +15,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import Footer from './Footer'
+import PlaidLink from './PlaidLink'
 
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname()
@@ -34,7 +35,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
         <SheetContent side='left' className='border-none bg-white'>
           {/* Titre requis pour l'accessibilité — ici caché visuellement */}
           <SheetHeader>
-            <SheetTitle className="sr-only">Menu principal</SheetTitle>
+            <SheetTitle className="sr-only">Services</SheetTitle>
           </SheetHeader>
 
           <Link href='/' className="cursor-pointer flex items-center gap-1 px-4">
@@ -42,10 +43,10 @@ const MobileNav = ({ user }: MobileNavProps) => {
               src="/icons/logo.svg"
               width={34}
               height={34}
-              alt="Horizon logo"
+              alt="MG-Bank logo"
             />
             <h1 className='text-26 font-ibm-plex-serif font-bold text-black-1'>
-              Horizon
+              MG-Bank
             </h1>
           </Link>
 
@@ -71,7 +72,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                 )
               })}
 
-              USER
+              <PlaidLink user={user} />
             </nav>
 
             <Footer user={user} type="mobile"/>

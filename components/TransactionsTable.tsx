@@ -169,11 +169,11 @@ const TransactionsTable = ({transactions}:TransactionTableProps) => {
         <TableHeader className='bg-[#F9FAFB]'>
             <TableRow>
                 <TableHead className="px-2">Transaction</TableHead>
-                <TableHead className="px-2">Montant</TableHead>
+                <TableHead className="px-2">Amount</TableHead>
                 <TableHead className="px-2">Status</TableHead>
                 <TableHead className="px-2">Date</TableHead>
-                <TableHead className="px-2 max-md:hidden">Canal</TableHead>
-                <TableHead className="px-2 max-md:hidden">Catégorie</TableHead>
+                <TableHead className="px-2 max-md:hidden">Channel</TableHead>
+                <TableHead className="px-2 max-md:hidden">Category</TableHead>
             </TableRow>
         </TableHeader>
         <TableBody>
