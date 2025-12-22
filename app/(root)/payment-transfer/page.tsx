@@ -4,9 +4,14 @@ import PaymentTransferForm from '@/components/PaymentTransferForm'
 import { getLoggedInUser } from '@/lib/actions/user.actions'
 import { getAccounts } from '@/lib/actions/bank.actions'
 
+export const dynamic = 'force-dynamic'
+
+
 const Transfer = async() => {
 
   const loggedIn = await getLoggedInUser()
+
+  if (!loggedIn) return null
   
     const accounts = await getAccounts({
       userId: loggedIn.$id

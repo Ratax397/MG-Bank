@@ -4,9 +4,14 @@ import { getLoggedInUser } from '@/lib/actions/user.actions'
 import { getAccounts } from '@/lib/actions/bank.actions'
 import BankCard from '@/components/BankCard'
 
+
+export const dynamic = 'force-dynamic'
+
 const MyBanks = async() => {
 
     const loggedIn = await getLoggedInUser()
+
+    if (!loggedIn) return null
   
     const accounts = await getAccounts({
       userId: loggedIn.$id
