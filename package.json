@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -22,7 +22,7 @@
     "clsx": "^2.1.1",
     "dwolla-v2": "^3.4.0",
     "lucide-react": "^0.540.0",
-    "next": "15.5.0",
+    "next": "^16.1.0",
     "node-appwrite": "^18.0.0",
     "plaid": "^38.1.0",
     "query-string": "^9.2.2",
