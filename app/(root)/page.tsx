@@ -15,6 +15,8 @@ const Home = async ({searchParams : {id,page}} : SearchParamProps) => {
 
   const loggedIn = await getLoggedInUser()
 
+  if (!loggedIn) return null
+  
   const accounts = await getAccounts({
     userId: loggedIn.$id
   })
@@ -25,7 +27,7 @@ const Home = async ({searchParams : {id,page}} : SearchParamProps) => {
 
   const appwriteItemId = (id as string) || accountsData[0]?.appwriteItemId;
 
-  // ✅ MODIFICATION ICI : Ajouter la vérification
+  
   const account = appwriteItemId ? await getAccount({appwriteItemId}) : null;
 
   return (
@@ -41,7 +43,7 @@ const Home = async ({searchParams : {id,page}} : SearchParamProps) => {
           />
 
           <TotalBalanceBox
-             accounts={accountsData}  // ✅ MODIFIER ICI : Enlever les []
+             accounts={accountsData}  
              totalBanks={accounts?.totalBanks}
              totalCurrentBalance={ accounts?.totalCurrentBalance }
           
@@ -58,7 +60,7 @@ const Home = async ({searchParams : {id,page}} : SearchParamProps) => {
 
        <RightSidebar 
         user={loggedIn}
-        transactions={account?.transactions || []}  // ✅ MODIFIER ICI
+        transactions={account?.transactions || []} 
         banks={accountsData?.slice(0,2)}
        />
     </section>
