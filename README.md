@@ -1,5 +1,7 @@
 # Mada Bank
 
+🌐 **[View Live Demo](https://mg-bank.vercel.app/)**
+
 A modern digital banking demo focused on Madagascar. It lets users link bank accounts, view balances and transactions, and send money — including cross‑border transfers to/from U.S. bank accounts (Plaid sandbox + Dwolla). This repository is for learning/demo purposes only, not production use.
 
 ## Overview
@@ -7,6 +9,7 @@ A modern digital banking demo focused on Madagascar. It lets users link bank acc
 - Bank linking via Plaid (sandbox)
 - Transfers via Dwolla (supports U.S. bank accounts)
 - Secure authentication and sessions with Appwrite
+- **🌐 [Live Demo](https://mg-bank.vercel.app/)**
 
 ## Tech Stack
 - TypeScript, Next.js 15 (App Router)
