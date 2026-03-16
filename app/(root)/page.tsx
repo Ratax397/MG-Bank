@@ -9,8 +9,10 @@ import RecentTransactions from '@/components/RecentTransactions'
 
 export const dynamic = 'force-dynamic'
 
-const Home = async ({searchParams : {id,page}} : SearchParamProps) => {
-
+const Home = async ({searchParams} : SearchParamProps) => {
+  
+  const {id,page}= await searchParams
+  
   const currentPage = Number(page as string) || 1;
 
   const loggedIn = await getLoggedInUser()

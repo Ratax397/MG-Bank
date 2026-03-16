@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import Link from 'next/link'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BankTabItem } from './BankTabItem'
@@ -61,10 +61,12 @@ const RecentTransactions = ({
 
               {totalPages > 1 && (
                 <div className='my-4 w-full'>
-                  <Pagination 
-                    totalPages={totalPages}
-                    page={page}
-                  /> 
+                  <Suspense fallback={null}>
+                    <Pagination 
+                      totalPages={totalPages}
+                      page={page}
+                    /> 
+                  </Suspense>
                 </div>
               )}
 
